@@ -52,7 +52,7 @@ $senha = $_POST["senha"]; //Linha de Código que recebe senha enviado pelo usuá
                 <!-- Divisão de Credenciais -->
                 <label for="senha">Senha: </label>
                 <input type="password" id="senha" name="senha" placeholder="Digite sua senha: " required>
-                <button type="submit">Entrar</button>
+                <button type="submit">Entrar</button> <br> <button type="submit">Criar login</button>
             </div>
     </form>
 </main>
