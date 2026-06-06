@@ -19,7 +19,7 @@ $livro_2 = array(
 
 $livro_3 = array(
     "id" => 3,
-    "titulo" => "Oque o sol faz com as flores",
+    "titulo" => "O que o sol faz com as flores",
     "autor" => "Rupi Kaur",
     "categoria" => "Poesia",
     "ano" => 2017,

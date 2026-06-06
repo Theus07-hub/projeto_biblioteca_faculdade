@@ -2,6 +2,15 @@
 global $livro_1;
 include "dados.php";
 
+include "conexao.php";
+
+$sql = "SELECT * FROM livro";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+$livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 session_start();
 
 if(isset($_POST["pesquisa"])) {
@@ -13,13 +22,13 @@ if(isset($_POST["pesquisa"])) {
 
         }else{
 
-            if($pesquisa == "Codigo Limpo" || $pesquisa == "Outros jietos de usar a boca" || $pesquisa == "O que o sol faz com as flores" || $pesquisa == "Mitologia Nordica") {
+            if($pesquisa == "Codigo Limpo" || $pesquisa == "Outros jeitos de usar a boca" || $pesquisa == "O que o sol faz com as flores" || $pesquisa == "Mitologia Nordica") {
 
-                    $SESSION["pesquisa"] = $pesquisa;
+                    $_SESSION["pesquisa"] = $pesquisa;
 
             }else{
 
-                echo "Livro não encontrado ou Idisponivel";
+                echo "Livro não encontrado ou Indisponível";
             }
         }
 }
@@ -37,7 +46,9 @@ if(isset($_POST["pesquisa"])) {
 </head>
 <body>
 
-<?php include "menu.php"; ?>
+<?php 
+include "menu.php"; ?>
+
 
 <div class="container">
     <?php foreach ($livros as $livro): ?>
@@ -48,46 +59,10 @@ if(isset($_POST["pesquisa"])) {
                 <p><strong>Categoria: </strong><?= $livro["categoria"]?></p>
                 <p><strong>Ano: </strong><?= $livro["ano"]?></p>
                 <p><strong>Quantidade: </strong><?= $livro["quantidade"]?></p>
+                <a href="emprestimos.php?id=<?= $livro['id'] ?>">Pedir empréstimo</a>
             </div>
         </div>
     <?php endforeach; ?>
-
-    <?php foreach ($livros as $livro_2): ?>
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title"><?= $livro_2["titulo"] ?></h3>
-                <p><strong>Autor: </strong> <?= $livro_2["autor"]?></p>
-                <p><strong>Categoria: </strong><?= $livro_2["categoria"]?></p>
-                <p><strong>Ano: </strong><?= $livro_2["ano"]?></p>
-                <p><strong>Quantidade: </strong><?= $livro_2["quantidade"]?></p>
-    <?php endforeach; ?>
-            </div>
-        </div>
-
-    <?php foreach ($livros as $livro_3): ?>
-    <div class="card mb-3">
-        <div class="card-body">
-            <h3 class="card-title"><?= $livro_3["titulo"] ?></h3>
-            <p><strong>Autor: </strong> <?= $livro_3["autor"]?></p>
-            <p><strong>Categoria: </strong><?= $livro_3["categoria"]?></p>
-            <p><strong>Ano: </strong><?= $livro_3["ano"]?></p>
-            <p><strong>Quantidade: </strong><?= $livro_3["quantidade"]?></p>
-            <?php endforeach; ?>
-        </div>
-    </div>
-
-    <?php foreach ($livros as $livro_4): ?>
-    <div class="card mb-3">
-        <div class="card-body">
-            <h3 class="card-title"><?= $livro_4["titulo"] ?></h3>
-            <p><strong>Autor: </strong> <?= $livro_4["autor"]?></p>
-            <p><strong>Categoria: </strong><?= $livro_4["categoria"]?></p>
-            <p><strong>Ano: </strong><?= $livro_4["ano"]?></p>
-            <p><strong>Quantidade: </strong><?= $livro_4["quantidade"]?></p>
-            <?php endforeach; ?>
-        </div>
-    </div>
 </div>
-
 </body>
 </html>
