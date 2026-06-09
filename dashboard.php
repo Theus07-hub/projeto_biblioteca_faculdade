@@ -38,7 +38,7 @@
 
         <div class ="col-md-4">
             <div class="card">
-                <a href="paginas/emprestimos.php">
+                <a href="paginas/consultar_emprestimos.php">
                 <div class="card-body">
                     <h5 class="card-title">Registro e cadastro de empréstimos</h5>
                     <p class="card-text">Área de empréstimos, veja os usuários que possuem empréstimos de livro.</p>
