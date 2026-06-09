@@ -13,32 +13,40 @@
 <div class="container" >
     <h3>Painel do Sistema</h3>
     <div class="row">
-      <div class="col-md-4"> <!-- Coluna | md= em Tela media | ocupa 4 partes de 12 --> <!-- A ocupacao vem da grid do Bootstrap, proporcao -->
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Livros</h5>
-                  <p class="card-text">Confira os livros que os usuarios alugaram</p>
-              </div>
-          </div>
-      </div>
-
-        <div class="col-md-4">
+        <div class ="col-md-4">
             <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Usuarios</h5>
-                    <p class="card-text">Acesse a lista de usuarios ativos.</p>
-                </div>
+                <a href="paginas/livros.php">
+                    <div class="card-body">
+                        <h5 class="card-title">Áreas de Livros</h5>
+                        <p class="card-text">Veja e escolha os livros disponiveis.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <div class="col-md-4">
+
+        <div class ="col-md-4">
             <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Emprestimos</h5>
-                    <p class="card-text">Area de emprestimos dos usuarios.</p>
-                </div>
+                <a href="paginas/usuarios.php">
+                    <div class="card-body">
+                        <h5 class="card-title">Acesso aos usuários cadastrados</h5>
+                        <p class="card-text">Logins de usuários.</p>
+                    </div>
+                </a>
             </div>
         </div>
+
+        <div class ="col-md-4">
+            <div class="card">
+                <a href="paginas/emprestimos.php">
+                <div class="card-body">
+                    <h5 class="card-title">Registro e cadastro de empréstimos</h5>
+                    <p class="card-text">Área de empréstimos, veja os usuários que possuem empréstimos de livro.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+
 
     </div> <!-- Fechamento da div ROW -->
 </div><!-- Fechamento da div container -->

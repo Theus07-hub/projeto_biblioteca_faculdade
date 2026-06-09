@@ -1,7 +1,9 @@
 <?php include "menu.php"; ?>
 <?php include "conexao.php";
 
-$sql= "SELECT * FROM usuario";
+$sql= "SELECT * FROM usuario WHERE name";
+
+
 
 
 
