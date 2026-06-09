@@ -33,4 +33,34 @@
     </div>
 </div>
 
+<?php
+$sql = "SELECT id, nome, email FROM usuario";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($usuarios as $usuario) {
+?>
+    <div class="row-perfil">
+        <div class="perfil">
+            <div class="perfil-body">
+                <h3 class="perfil-title">
+                    <?php echo htmlspecialchars($usuario['nome']); ?>
+                </h3>
+
+                <p>
+                    <?php echo htmlspecialchars($usuario['email']); ?>
+                </p>
+            </div>
+        </div>
+    </div>
+<?php
+}
+?>
+
+
+
 </body>
+</html>
