@@ -1,5 +1,5 @@
-<?php include "menu.php"; ?>
-<?php include "conexao.php";
+<?php include "../config/menu.php"; ?>
+<?php include "../config/conexao.php";
 ?>
 
 
@@ -17,8 +17,8 @@
         <div class="perfil-body">
             <!-- a sigla $stmt, serve para puxar informações do banco de dados -->
             <?php $sql= "SELECT id, nome, email FROM usuario";
-            $stmt = $pdo = prepare($sql);
-            $stmt->execute(['id' => 1]);
+            $stmt = $pdo -> prepare($sql);
+            $stmt->execute();
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($usuario) {

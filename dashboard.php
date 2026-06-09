@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<?php include "menu.php"; ?>
+<?php include "./config/menu.php"; ?>
 <!-- Conceitos do Bootstrap -->
 
 <div class="container" >

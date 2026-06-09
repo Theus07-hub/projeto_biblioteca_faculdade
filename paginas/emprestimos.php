@@ -6,14 +6,14 @@ $id = $_GET['id'];
 
 
 $sql = "SELECT * FROM livro WHERE id = ?";
-$stmt = $conn->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $stmt->execute([$id]);
 
 $livro = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 $sql = "SELECT id, nome FROM usuario";
-$stmt = $conn->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $livro_id = $_POST["livro_id"];
 
     $sql = "SELECT quantidade FROM livro WHERE id = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute([$livro_id]);
 
     $livroSelecionado = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         (usuario_id, livro_id, data_emprestimo)
         VALUES (?, ?, NOW())";
 
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
 
         $stmt->execute([
             $usuario_id,
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 SET quantidade = quantidade - 1
                 WHERE id = ?";
 
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute([$livro_id]);
 
         echo "<p>Empréstimo realizado com sucesso!</p>";

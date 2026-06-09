@@ -6,7 +6,7 @@ include "../config/conexao.php";
 
 $sql = "SELECT * FROM livro";
 
-$stmt = $conn->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
