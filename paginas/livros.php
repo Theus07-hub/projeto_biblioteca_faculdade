@@ -1,8 +1,8 @@
 <?php
 global $livro_1;
-include "dados.php";
+include "../config/dados.php";
 
-include "conexao.php";
+include "../config/conexao.php";
 
 $sql = "SELECT * FROM livro";
 
@@ -47,7 +47,7 @@ if(isset($_POST["pesquisa"])) {
 <body>
 
 <?php 
-include "menu.php"; ?>
+include "../config/menu.php"; ?>
 
 
 <div class="container">

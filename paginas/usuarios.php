@@ -1,5 +1,5 @@
-<?php include "menu.php"; ?>
-<?php include "conexao.php";
+<?php include "../config/menu.php"; ?>
+<?php include "../config/conexao.php";
 
 $sql= "SELECT * FROM usuario WHERE name";
 
@@ -20,7 +20,7 @@ $sql= "SELECT * FROM usuario WHERE name";
 
 </head>
 <body>
-<!--Colocando as tags PHP para exibir o echo no HTML-->
+
 <div id="username">  </div>
 
 </body>
