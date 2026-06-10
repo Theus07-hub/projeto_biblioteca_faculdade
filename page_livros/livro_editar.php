@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo "<p>Livro atualizado com sucesso!</p>";
 
-    // Atualiza os dados exibidos no formulário
     $sql = "SELECT * FROM livro WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
@@ -63,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Editar Livro</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 

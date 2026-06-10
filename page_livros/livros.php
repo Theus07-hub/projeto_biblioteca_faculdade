@@ -63,6 +63,7 @@ include "../config/menu.php"; ?>
                 <p><strong>Quantidade: </strong><?= $livro["quantidade"]?></p>
                 <a href="../page_emprestimo/emprestimos.php?id=<?= $livro['id'] ?>">Pedir empréstimo</a>
                 <a href="livro_editar.php?id=<?= $livro['id'] ?>">Editar</a>
+                <a href="livro_excluir.php?id=<?= $livro['id'] ?>"onclick="return confirm('Tem certeza que deseja excluir este livro?')">Excluir</a>
             </div>
         </div>
     <?php endforeach; ?>
