@@ -15,7 +15,7 @@
     <div class="row">
         <div class ="col-md-4">
             <div class="card">
-                <a href="paginas/livros.php">
+                <a href="../page_livros/livros.php">
                     <div class="card-body">
                         <h5 class="card-title">Áreas de Livros</h5>
                         <p class="card-text">Veja e escolha os livros disponiveis.</p>
@@ -27,7 +27,7 @@
 
         <div class ="col-md-4">
             <div class="card">
-                <a href="paginas/usuarios.php">
+                <a href="../usuarios.php">
                     <div class="card-body">
                         <h5 class="card-title">Acesso aos usuários cadastrados</h5>
                         <p class="card-text">Logins de usuários.</p>
@@ -38,7 +38,7 @@
 
         <div class ="col-md-4">
             <div class="card">
-                <a href="paginas/consultar_emprestimos.php">
+                <a href="../page_emprestimo/consultar_emprestimos.php">
                 <div class="card-body">
                     <h5 class="card-title">Registro e cadastro de empréstimos</h5>
                     <p class="card-text">Área de empréstimos, veja os usuários que possuem empréstimos de livro.</p>

@@ -33,6 +33,7 @@
     </div>
 </div>
 
+<!-- Código refeito com ajuda de ia -->
 <?php
 $sql = "SELECT id, nome, email FROM usuario";
 

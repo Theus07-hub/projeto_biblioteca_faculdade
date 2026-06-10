@@ -59,7 +59,7 @@ include "../config/menu.php"; ?>
                 <p><strong>Categoria: </strong><?= $livro["categoria"]?></p>
                 <p><strong>Ano: </strong><?= $livro["ano"]?></p>
                 <p><strong>Quantidade: </strong><?= $livro["quantidade"]?></p>
-                <a href="emprestimos.php?id=<?= $livro['id'] ?>">Pedir empréstimo</a>
+                <a href="../page_emprestimo/emprestimos.php?id=<?= $livro['id'] ?>">Pedir empréstimo</a>
             </div>
         </div>
     <?php endforeach; ?>
