@@ -1,5 +1,5 @@
-<?php include "../config/menu.php"; ?>
-<?php include "../config/conexao.php";
+<?php include "./config/menu.php"; ?>
+<?php include "./config/conexao.php";
 ?>
 
 

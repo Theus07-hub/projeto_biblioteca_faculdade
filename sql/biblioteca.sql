@@ -18,7 +18,6 @@ CREATE TABLE livro (
     categoria VARCHAR(245) NOT NULL,
     ano INT NOT NULL,
     quantidade INT(2) NOT NULL,
-    usuario_id INT,
     PRIMARY KEY (id)
 );
 
@@ -36,6 +35,9 @@ CREATE TABLE emprestimos (
     livro_id INT,
     data_emprestimo DATE,
     data_devolucao DATE
+
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (livro_id) REFERENCES livro(id)
 );
 
 INSERT INTO usuario(id, nome, email, senha, role)
@@ -46,12 +48,12 @@ INSERT INTO usuario(id, nome, email, senha, role)
         (DEFAULT, 'Guilherme Santos Alvez', 'guilherme@gmail.com','guilher123','User');
         
 
-INSERT INTO livro(id, titulo, autor, categoria, ano, quantidade, usuario_id)
+INSERT INTO livro(id, titulo, autor, categoria, ano, quantidade)
 	VALUES
-		(DEFAULT, 'Codigo limpo', 'Robert C. Martin', 'Programação e Estudos', 2008, 2, 3),
-        (DEFAULT, 'Outros jeitos de usar a boca', 'Rupi Kaur','Poesia', 2014, 2, 1),
-        (DEFAULT, 'Mitologia Nordica', 'Neil Gaiman', 'Mitologia, Fantasia', 2017, 9, 2),
-        (DEFAULT, 'O que o sol faz com as flores', 'Rupi Kaur', 'Poesia', 2017, 5, 4);
+		(DEFAULT, 'Codigo limpo', 'Robert C. Martin', 'Programação e Estudos', 2008, 2),
+        (DEFAULT, 'Outros jeitos de usar a boca', 'Rupi Kaur','Poesia', 2014, 2),
+        (DEFAULT, 'Mitologia Nordica', 'Neil Gaiman', 'Mitologia, Fantasia', 2017, 9),
+        (DEFAULT, 'O que o sol faz com as flores', 'Rupi Kaur', 'Poesia', 2017, 5);
 
 INSERT INTO autor(id, nome, livro_id)
 	VALUES

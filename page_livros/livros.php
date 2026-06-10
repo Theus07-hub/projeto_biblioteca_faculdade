@@ -1,6 +1,6 @@
 <?php
 global $livro_1;
-include "../config/dados.php";
+include "../dados.php";
 
 include "../config/conexao.php";
 
@@ -49,6 +49,8 @@ if(isset($_POST["pesquisa"])) {
 <?php 
 include "../config/menu.php"; ?>
 
+<a href="livro_cadastrar.php">Cadastrar livro</a>
+
 
 <div class="container">
     <?php foreach ($livros as $livro): ?>
@@ -60,6 +62,7 @@ include "../config/menu.php"; ?>
                 <p><strong>Ano: </strong><?= $livro["ano"]?></p>
                 <p><strong>Quantidade: </strong><?= $livro["quantidade"]?></p>
                 <a href="../page_emprestimo/emprestimos.php?id=<?= $livro['id'] ?>">Pedir empréstimo</a>
+                <a href="livro_editar.php?id=<?= $livro['id'] ?>">Editar</a>
             </div>
         </div>
     <?php endforeach; ?>
